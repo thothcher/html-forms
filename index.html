@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Playground</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>HTML &amp; CSS Playground</h1>
+        <p>A small space to see how a styled element is put together — flip the card to read the exact HTML and CSS behind it.</p>
+    </header>
+
+    <section class="flip-section">
+        <div class="section-heading">
+            <h2>See the code behind the card</h2>
+            <p>The card on the left uses borders, border-radius, flexbox alignment and font styling. Flip it to read the source.</p>
+        </div>
+
+        <div class="flip-wrap">
+            <div class="flip-card-scene">
+                <div class="flip-card-inner">
+
+                    <div class="card-face card-front">
+                        <div class="demo-card">
+                            <h3>Welcome Back</h3>
+                            <p>Sign in to continue</p>
+                            <input type="text" placeholder="Username">
+                            <input type="password" placeholder="Password">
+                            <button type="button">Sign In</button>
+                        </div>
+                    </div>
+
+                    <div class="card-face card-back">
+                        <div class="code-pane">
+                            <div class="code-pane-header">
+                                <span class="dot dot-html"></span>
+                                <span class="code-pane-title">index.html</span>
+                            </div>
+                            <pre class="code-block"><code><span class="punct">&lt;</span><span class="tag">div</span> <span class="attr">class</span><span class="punct">=</span><span class="str">"demo-card"</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">h3</span><span class="punct">&gt;</span>Welcome Back<span class="punct">&lt;/</span><span class="tag">h3</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">p</span><span class="punct">&gt;</span>Sign in to continue<span class="punct">&lt;/</span><span class="tag">p</span><span class="punct">&gt;</span>
+
+    <span class="punct">&lt;</span><span class="tag">input</span> <span class="attr">type</span><span class="punct">=</span><span class="str">"text"</span>
+        <span class="attr">placeholder</span><span class="punct">=</span><span class="str">"Username"</span><span class="punct">&gt;</span>
+
+    <span class="punct">&lt;</span><span class="tag">input</span> <span class="attr">type</span><span class="punct">=</span><span class="str">"password"</span>
+        <span class="attr">placeholder</span><span class="punct">=</span><span class="str">"Password"</span><span class="punct">&gt;</span>
+
+    <span class="punct">&lt;</span><span class="tag">button</span><span class="punct">&gt;</span>Sign In<span class="punct">&lt;/</span><span class="tag">button</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">div</span><span class="punct">&gt;</span></code></pre>
+                        </div>
+
+                        <div class="code-pane">
+                            <div class="code-pane-header">
+                                <span class="dot dot-css"></span>
+                                <span class="code-pane-title">style.css</span>
+                            </div>
+                            <pre class="code-block"><code><span class="selector">.demo-card</span> <span class="punct">{</span>
+    <span class="prop">display</span><span class="punct">:</span> <span class="cssval">flex</span><span class="punct">;</span>
+    <span class="prop">flex-direction</span><span class="punct">:</span> <span class="cssval">column</span><span class="punct">;</span>
+    <span class="prop">align-items</span><span class="punct">:</span> <span class="cssval">center</span><span class="punct">;</span>
+    <span class="prop">gap</span><span class="punct">:</span> <span class="cssval">14px</span><span class="punct">;</span>
+    <span class="prop">padding</span><span class="punct">:</span> <span class="cssval">40px 32px</span><span class="punct">;</span>
+    <span class="prop">border</span><span class="punct">:</span> <span class="cssval">1px solid #e3e5ec</span><span class="punct">;</span>
+    <span class="prop">border-radius</span><span class="punct">:</span> <span class="cssval">18px</span><span class="punct">;</span>
+    <span class="prop">text-align</span><span class="punct">:</span> <span class="cssval">center</span><span class="punct">;</span>
+<span class="punct">}</span>
+
+<span class="selector">.demo-card button</span> <span class="punct">{</span>
+    <span class="prop">border</span><span class="punct">:</span> <span class="cssval">none</span><span class="punct">;</span>
+    <span class="prop">border-radius</span><span class="punct">:</span> <span class="cssval">8px</span><span class="punct">;</span>
+    <span class="prop">background</span><span class="punct">:</span> <span class="cssval">#4f46e5</span><span class="punct">;</span>
+    <span class="prop">color</span><span class="punct">:</span> <span class="cssval">#fff</span><span class="punct">;</span>
+    <span class="prop">font-weight</span><span class="punct">:</span> <span class="cssval">600</span><span class="punct">;</span>
+<span class="punct">}</span></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <button type="button" class="flip-toggle" aria-pressed="false">View the Code</button>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <div class="section-heading">
+            <h2>Full Form Example</h2>
+            <p>Every input type styled with the same borders, radius and spacing rules shown above. Flip it to read the source.</p>
+        </div>
+
+        <div class="flip-wrap">
+            <div class="flip-card-scene flip-card-scene--tall">
+                <div class="flip-card-inner">
+
+                    <div class="card-face card-front card-front--scroll">
+                        <form class="styled-form" action="">
+
+                            <div class="field-row">
+                                <div class="field">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                                </div>
+                                <div class="field">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                </div>
+                            </div>
+
+                            <div class="field-row">
+                                <div class="field">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" placeholder="Enter password" required>
+                                </div>
+                                <div class="field">
+                                    <label for="age">Age</label>
+                                    <input type="number" id="age" name="age" placeholder="Age" required>
+                                </div>
+                            </div>
+
+                            <div class="field-row">
+                                <div class="field">
+                                    <label for="date">Date</label>
+                                    <input type="date" id="date" name="date">
+                                </div>
+                                <div class="field">
+                                    <label for="time">Time</label>
+                                    <input type="time" id="time" name="time">
+                                </div>
+                                <div class="field">
+                                    <label for="color">Color</label>
+                                    <input type="color" id="color" name="color">
+                                </div>
+                            </div>
+
+                            <div class="field-row">
+                                <div class="field">
+                                    <label for="file">File</label>
+                                    <input type="file" id="file" name="file">
+                                </div>
+                                <div class="field">
+                                    <label for="range">Range</label>
+                                    <input type="range" id="range" name="range">
+                                </div>
+                            </div>
+
+                            <div class="field-row">
+                                <div class="field">
+                                    <label for="month">Month</label>
+                                    <input type="month" id="month" name="month">
+                                </div>
+                                <div class="field">
+                                    <label for="week">Week</label>
+                                    <input type="week" id="week" name="week">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="search">Search</label>
+                                <input type="search" id="search" name="search" placeholder="Search..">
+                            </div>
+
+                            <fieldset>
+                                <legend>Gender</legend>
+                                <div class="choice-row">
+                                    <input type="radio" id="male" name="gender">
+                                    <label for="male">Male</label>
+                                </div>
+                                <div class="choice-row">
+                                    <input type="radio" id="female" name="gender">
+                                    <label for="female">Female</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Agreements</legend>
+                                <div class="choice-row">
+                                    <input type="checkbox" id="terms" name="terms">
+                                    <label for="terms">I agree to the terms &amp; conditions</label>
+                                </div>
+                                <div class="choice-row">
+                                    <input type="checkbox" id="privacy" name="privacy">
+                                    <label for="privacy">I agree to the privacy policy</label>
+                                </div>
+                            </fieldset>
+
+                            <div class="field">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message"></textarea>
+                            </div>
+
+                            <div class="field">
+                                <label for="plan">Plan</label>
+                                <select id="plan" name="plan">
+                                    <option value="basic">Basic</option>
+                                    <option value="pro">Pro</option>
+                                    <option value="team">Team</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Send</button>
+                        </form>
+                    </div>
+
+                    <div class="card-face card-back">
+                        <div class="code-pane">
+                            <div class="code-pane-header">
+                                <span class="dot dot-html"></span>
+                                <span class="code-pane-title">index.html</span>
+                            </div>
+                            <pre class="code-block"><code><span class="punct">&lt;</span><span class="tag">form</span> <span class="attr">class</span><span class="punct">=</span><span class="str">"styled-form"</span> <span class="attr">action</span><span class="punct">=</span><span class="str">""</span><span class="punct">&gt;</span>
+
+    <span class="punct">&lt;</span><span class="tag">div</span> <span class="attr">class</span><span class="punct">=</span><span class="str">"field-row"</span><span class="punct">&gt;</span>
+        <span class="punct">&lt;</span><span class="tag">div</span> <span class="attr">class</span><span class="punct">=</span><span class="str">"field"</span><span class="punct">&gt;</span>
+            <span class="punct">&lt;</span><span class="tag">label</span> <span class="attr">for</span><span class="punct">=</span><span class="str">"name"</span><span class="punct">&gt;</span>Name<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+            <span class="punct">&lt;</span><span class="tag">input</span> <span class="attr">type</span><span class="punct">=</span><span class="str">"text"</span> <span class="attr">id</span><span class="punct">=</span><span class="str">"name"</span> <span class="attr">required</span><span class="punct">&gt;</span>
+        <span class="punct">&lt;/</span><span class="tag">div</span><span class="punct">&gt;</span>
+        <span class="punct">&lt;</span><span class="tag">div</span> <span class="attr">class</span><span class="punct">=</span><span class="str">"field"</span><span class="punct">&gt;</span>
+            <span class="punct">&lt;</span><span class="tag">label</span> <span class="attr">for</span><span class="punct">=</span><span class="str">"email"</span><span class="punct">&gt;</span>Email<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+            <span class="punct">&lt;</span><span class="tag">input</span> <span class="attr">type</span><span class="punct">=</span><span class="str">"email"</span> <span class="attr">id</span><span class="punct">=</span><span class="str">"email"</span> <span class="attr">required</span><span class="punct">&gt;</span>
+        <span class="punct">&lt;/</span><span class="tag">div</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;/</span><span class="tag">div</span><span class="punct">&gt;</span>
+
+    <span class="comment">&lt;!-- more fields follow the same .field pattern --&gt;</span>
+
+    <span class="punct">&lt;</span><span class="tag">fieldset</span><span class="punct">&gt;</span>
+        <span class="punct">&lt;</span><span class="tag">legend</span><span class="punct">&gt;</span>Gender<span class="punct">&lt;/</span><span class="tag">legend</span><span class="punct">&gt;</span>
+        <span class="punct">&lt;</span><span class="tag">div</span> <span class="attr">class</span><span class="punct">=</span><span class="str">"choice-row"</span><span class="punct">&gt;</span>
+            <span class="punct">&lt;</span><span class="tag">input</span> <span class="attr">type</span><span class="punct">=</span><span class="str">"radio"</span> <span class="attr">id</span><span class="punct">=</span><span class="str">"male"</span> <span class="attr">name</span><span class="punct">=</span><span class="str">"gender"</span><span class="punct">&gt;</span>
+            <span class="punct">&lt;</span><span class="tag">label</span> <span class="attr">for</span><span class="punct">=</span><span class="str">"male"</span><span class="punct">&gt;</span>Male<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+        <span class="punct">&lt;/</span><span class="tag">div</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;/</span><span class="tag">fieldset</span><span class="punct">&gt;</span>
+
+    <span class="punct">&lt;</span><span class="tag">div</span> <span class="attr">class</span><span class="punct">=</span><span class="str">"field"</span><span class="punct">&gt;</span>
+        <span class="punct">&lt;</span><span class="tag">label</span> <span class="attr">for</span><span class="punct">=</span><span class="str">"message"</span><span class="punct">&gt;</span>Message<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+        <span class="punct">&lt;</span><span class="tag">textarea</span> <span class="attr">id</span><span class="punct">=</span><span class="str">"message"</span><span class="punct">&gt;&lt;/</span><span class="tag">textarea</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;/</span><span class="tag">div</span><span class="punct">&gt;</span>
+
+    <span class="punct">&lt;</span><span class="tag">button</span> <span class="attr">type</span><span class="punct">=</span><span class="str">"submit"</span> <span class="attr">class</span><span class="punct">=</span><span class="str">"submit-btn"</span><span class="punct">&gt;</span>Send<span class="punct">&lt;/</span><span class="tag">button</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">form</span><span class="punct">&gt;</span></code></pre>
+                        </div>
+
+                        <div class="code-pane">
+                            <div class="code-pane-header">
+                                <span class="dot dot-css"></span>
+                                <span class="code-pane-title">style.css</span>
+                            </div>
+                            <pre class="code-block"><code><span class="selector">.styled-form</span> <span class="punct">{</span>
+    <span class="prop">display</span><span class="punct">:</span> <span class="cssval">flex</span><span class="punct">;</span>
+    <span class="prop">flex-direction</span><span class="punct">:</span> <span class="cssval">column</span><span class="punct">;</span>
+    <span class="prop">gap</span><span class="punct">:</span> <span class="cssval">22px</span><span class="punct">;</span>
+    <span class="prop">max-width</span><span class="punct">:</span> <span class="cssval">580px</span><span class="punct">;</span>
+    <span class="prop">padding</span><span class="punct">:</span> <span class="cssval">44px</span><span class="punct">;</span>
+<span class="punct">}</span>
+
+<span class="selector">.field-row</span> <span class="punct">{</span>
+    <span class="prop">display</span><span class="punct">:</span> <span class="cssval">flex</span><span class="punct">;</span>
+    <span class="prop">gap</span><span class="punct">:</span> <span class="cssval">16px</span><span class="punct">;</span>
+    <span class="prop">flex-wrap</span><span class="punct">:</span> <span class="cssval">wrap</span><span class="punct">;</span>
+<span class="punct">}</span>
+
+<span class="selector">.field</span> <span class="punct">{</span>
+    <span class="prop">display</span><span class="punct">:</span> <span class="cssval">flex</span><span class="punct">;</span>
+    <span class="prop">flex-direction</span><span class="punct">:</span> <span class="cssval">column</span><span class="punct">;</span>
+    <span class="prop">align-items</span><span class="punct">:</span> <span class="cssval">flex-start</span><span class="punct">;</span>
+    <span class="prop">gap</span><span class="punct">:</span> <span class="cssval">6px</span><span class="punct">;</span>
+<span class="punct">}</span>
+
+<span class="selector">.styled-form input</span><span class="punct">,</span>
+<span class="selector">.styled-form textarea</span> <span class="punct">{</span>
+    <span class="prop">border</span><span class="punct">:</span> <span class="cssval">1px solid #e3e5ec</span><span class="punct">;</span>
+    <span class="prop">border-radius</span><span class="punct">:</span> <span class="cssval">8px</span><span class="punct">;</span>
+    <span class="prop">padding</span><span class="punct">:</span> <span class="cssval">11px 14px</span><span class="punct">;</span>
+<span class="punct">}</span>
+
+<span class="selector">fieldset</span> <span class="punct">{</span>
+    <span class="prop">border</span><span class="punct">:</span> <span class="cssval">1px solid #e3e5ec</span><span class="punct">;</span>
+    <span class="prop">border-radius</span><span class="punct">:</span> <span class="cssval">8px</span><span class="punct">;</span>
+    <span class="prop">display</span><span class="punct">:</span> <span class="cssval">flex</span><span class="punct">;</span>
+    <span class="prop">flex-direction</span><span class="punct">:</span> <span class="cssval">column</span><span class="punct">;</span>
+    <span class="prop">gap</span><span class="punct">:</span> <span class="cssval">10px</span><span class="punct">;</span>
+<span class="punct">}</span>
+
+<span class="selector">.choice-row</span> <span class="punct">{</span>
+    <span class="prop">display</span><span class="punct">:</span> <span class="cssval">flex</span><span class="punct">;</span>
+    <span class="prop">align-items</span><span class="punct">:</span> <span class="cssval">center</span><span class="punct">;</span>
+    <span class="prop">gap</span><span class="punct">:</span> <span class="cssval">10px</span><span class="punct">;</span>
+<span class="punct">}</span>
+
+<span class="selector">.submit-btn</span> <span class="punct">{</span>
+    <span class="prop">border</span><span class="punct">:</span> <span class="cssval">none</span><span class="punct">;</span>
+    <span class="prop">border-radius</span><span class="punct">:</span> <span class="cssval">8px</span><span class="punct">;</span>
+    <span class="prop">background</span><span class="punct">:</span> <span class="cssval">#4f46e5</span><span class="punct">;</span>
+    <span class="prop">color</span><span class="punct">:</span> <span class="cssval">#fff</span><span class="punct">;</span>
+    <span class="prop">font-weight</span><span class="punct">:</span> <span class="cssval">600</span><span class="punct">;</span>
+<span class="punct">}</span></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <button type="button" class="flip-toggle" aria-pressed="false">View the Code</button>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>Built to practice borders, border-radius, flexbox and typography.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

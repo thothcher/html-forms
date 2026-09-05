@@ -1,0 +1,441 @@
+/* ---------------------------------------------------
+   Variables
+--------------------------------------------------- */
+:root {
+    --bg: #f3f4f8;
+    --surface: #ffffff;
+    --border: #e3e5ec;
+    --text: #1e2130;
+    --text-muted: #6b7080;
+    --accent: #4f46e5;
+    --accent-hover: #4338ca;
+    --accent-soft: rgba(79, 70, 229, 0.14);
+    --radius-lg: 20px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+
+    --code-bg: #1e1e2e;
+    --code-header: #181825;
+    --code-text: #cdd6f4;
+    --code-muted: #9399b2;
+    --code-border: #313244;
+}
+
+/* ---------------------------------------------------
+   Base
+--------------------------------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+/* ---------------------------------------------------
+   Header
+--------------------------------------------------- */
+.site-header {
+    text-align: center;
+    padding: 64px 24px 32px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.site-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.site-header p {
+    margin-top: 12px;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+section {
+    padding: 32px 24px 72px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 36px;
+}
+
+.section-heading h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.section-heading p {
+    margin-top: 8px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ---------------------------------------------------
+   Flip card
+--------------------------------------------------- */
+.flip-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+.flip-card-scene {
+    width: 100%;
+    max-width: 720px;
+    height: 480px;
+    perspective: 1800px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.9s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.flip-card-scene.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.card-front {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 24px 48px -28px rgba(30, 33, 48, 0.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-front--scroll {
+    align-items: flex-start;
+    overflow-y: auto;
+}
+
+.flip-card-scene--tall {
+    height: 640px;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    display: flex;
+    flex-direction: row;
+}
+
+.code-pane {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.code-pane + .code-pane {
+    border-left: 1px solid var(--code-border);
+}
+
+.code-pane-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    background: var(--code-header);
+    border-bottom: 1px solid var(--code-border);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.dot-html { background: #f38ba8; }
+.dot-css  { background: #89b4fa; }
+
+.code-pane-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--code-muted);
+}
+
+.code-block {
+    margin: 0;
+    padding: 18px 20px;
+    flex: 1;
+    overflow: auto;
+    font-family: Consolas, "Cascadia Code", "Courier New", monospace;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--code-text);
+}
+
+/* syntax colors */
+.tag      { color: #f38ba8; }
+.attr     { color: #fab387; }
+.str      { color: #a6e3a1; }
+.punct    { color: #6c7086; }
+.selector { color: #cba6f7; }
+.prop     { color: #89b4fa; }
+.cssval   { color: #f9e2af; }
+.comment  { color: var(--code-muted); font-style: italic; }
+
+.flip-toggle {
+    appearance: none;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 13px 30px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.flip-toggle:hover {
+    background: var(--accent-hover);
+}
+
+.flip-toggle:active {
+    transform: scale(0.97);
+}
+
+.flip-toggle:focus-visible {
+    outline: 3px solid var(--accent-soft);
+    outline-offset: 3px;
+}
+
+/* ---------------------------------------------------
+   Demo card (shown on the front face, mirrored in code)
+--------------------------------------------------- */
+.demo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    max-width: 300px;
+    padding: 40px 32px;
+    border: 1px solid #e3e5ec;
+    border-radius: 18px;
+    text-align: center;
+    font-family: inherit;
+}
+
+.demo-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.demo-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.demo-card input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d7d9e2;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+.demo-card button {
+    margin-top: 4px;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* ---------------------------------------------------
+   Full form section
+--------------------------------------------------- */
+.styled-form {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+}
+
+.field label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.field-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.field-row .field {
+    flex: 1;
+    min-width: 160px;
+}
+
+.styled-form input,
+.styled-form select,
+.styled-form textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: #fbfbfd;
+    color: var(--text);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.styled-form input[type="color"] {
+    padding: 4px;
+    height: 44px;
+}
+
+.styled-form input[type="range"] {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.styled-form input:focus,
+.styled-form select:focus,
+.styled-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.styled-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+legend {
+    padding: 0 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.choice-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.choice-row input {
+    width: auto;
+    accent-color: var(--accent);
+}
+
+.choice-row label {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.submit-btn {
+    margin-top: 6px;
+    padding: 13px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--accent);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.submit-btn:hover {
+    background: var(--accent-hover);
+}
+
+/* ---------------------------------------------------
+   Footer
+--------------------------------------------------- */
+.site-footer {
+    text-align: center;
+    padding: 32px 24px 56px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ---------------------------------------------------
+   Responsive
+--------------------------------------------------- */
+@media (max-width: 640px) {
+    .flip-card-scene {
+        height: 620px;
+    }
+
+    .card-back {
+        flex-direction: column;
+    }
+
+    .code-pane + .code-pane {
+        border-left: none;
+        border-top: 1px solid var(--code-border);
+    }
+
+    .styled-form {
+        padding: 28px 22px;
+    }
+}
